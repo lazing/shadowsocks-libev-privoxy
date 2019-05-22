@@ -1,7 +1,7 @@
 version: "3"
 services:
   sslocal:
-    image: nediiii/shadowsocks-libev-privoxy
+    image: lazing/shadowsocks-libev-privoxy
     restart: always
     environment:
       SERVER_ADDR: 198.199.101.152

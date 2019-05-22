@@ -1,15 +1,16 @@
-FROM shadowsocks/shadowsocks-libev
+FROM shadowsocks/shadowsocks-libev:v3.2.5
 
 LABEL maintainer="nediiii <varnediiii@gmail.com>"
+LABEL maintainer="Lazing <lazing@gmail.com>"
 
 USER root
 
 # uncomment next line to speed up build
-# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories 
+# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
 RUN apk add --no-cache privoxy
 
-ADD ./privoxy/ /etc/privoxy/
+COPY ./privoxy/ /etc/privoxy/
 
 EXPOSE 1080 8118
 
